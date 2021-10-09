@@ -7,7 +7,7 @@ $(window).on('load', function () {
 
 function getMovie() {
     $.ajax({
-        url: "http://www.omdbapi.com",
+        url: "https://www.omdbapi.com",
         type: "get",
         dataType: "json",
         data: {
@@ -68,7 +68,7 @@ function getMovie() {
 
 function getMovie2() {
     $.ajax({
-        url: "http://www.omdbapi.com/",
+        url: "https://www.omdbapi.com/",
         type: "get",
         dataType: "json",
         data: {
@@ -175,7 +175,7 @@ $('.logo-kecil').on('click', function () {
 $('#listmovies').on('click', '.see-details', function () {
     console.log($(this).data('id'))
     $.ajax({
-        url: "http://www.omdbapi.com",
+        url: "https://www.omdbapi.com",
         type: "get",
         dataType: "json",
         data: {
