@@ -173,7 +173,7 @@ $('.logo-kecil').on('click', function () {
 })
 
 $('#listmovies').on('click', '.see-details', function () {
-    console.log($(this).data('id'))
+    console.log($(this))
     $.ajax({
         url: "https://www.omdbapi.com",
         type: "get",
