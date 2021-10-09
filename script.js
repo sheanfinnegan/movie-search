@@ -199,7 +199,7 @@ $('#listmovies').on('click', '.see-details', function () {
                                     <li class="list-group-item"><b>Actors : </b>`+ movie.Actors + `</li>
                                     <li class="list-group-item"><b>Genre : </b>`+ movie.Genre + `</li>
                                     <li class="list-group-item"><b>Type : </b>`+ movie.Type + `</li>
-                                    <li class="list-group-item"><b>IMDB Rating: </b>`+ movie.imdbRating + `</li>
+                                    <li class="list-group-item"><b>IMDB Rating : </b>`+ movie.imdbRating + `</li>
                                 </ul>
                             </div>
                         </div>
