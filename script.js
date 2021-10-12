@@ -223,8 +223,10 @@ $('#listmovies').on('click', '.see-details', function () {
 })
 
 $('.dropdown-item').on('click', function () {
+    $('#wholeDocument').removeClass('wholeDoc')
     const typeMovie = $(this).html()
     $('#navbarDropdown').html(typeMovie)
+    $('#listmovies').html('')
     $.ajax({
         url: "https://www.omdbapi.com",
         type: "get",
@@ -236,7 +238,6 @@ $('.dropdown-item').on('click', function () {
         },
         success: function (movie) {
             if (movie.Response == "True") {
-                $('#listmovies').html('')
                 let movies = movie.Search
                 $.each(movies, function (i, data) {
                     $('#listmovies').append(`
