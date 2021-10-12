@@ -35,7 +35,28 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li id="listType" class="nav-item dropdown d-none">
+                            <a style="font-family: 'Poppins'; font-size:17px;"
+                                class="nav-link active dropdown-toggle me-2" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Type
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a style="font-family: 'Poppins'; font-size: 14px;" class="dropdown-item"
+                                        href="#">Movie</a></li>
+                                <li><a style="font-family: 'Poppins'; font-size: 14px;" class="dropdown-item"
+                                        href="#">Series</a>
+                                </li>
+                                <li><a style="font-family: 'Poppins'; font-size: 14px;" class="dropdown-item"
+                                        href="#">Episodes</a>
+                                </li>
+                                <li><a style="font-family: 'Poppins'; font-size: 14px;" class="dropdown-item"
+                                        href="#">Game</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
 
                     <div class="d-flex">
                         <input id="cariFilm" class="form-control me-2" type="search" placeholder="Search by Title"
@@ -89,10 +110,11 @@
         </section>
 
 
-        <section id="movie-list" class="d-none">
+        <section id="movie-list" class="d-none" style="padding-top: 6.7rem;">
             <div class="container">
-                <div id="all" class="col pb-2" style="padding-top: 6.7rem;">
-                    <h1 style="color:white;font-family: 'Poppins'; font-weight: bold;" id="title-genre" class="fs-2">
+                <div id="all" class="col pb-2">
+                    <h1 style="color:white;font-family: 'Poppins'; font-weight: bold;" id="title-genre"
+                        class="fs-2 d-flex">
                     </h1>
                 </div>
                 <div class="row" id="listmovies">

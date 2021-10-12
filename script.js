@@ -131,37 +131,43 @@ function getMovie2() {
 
 
 $('#btn').on('click', function () {
+    $('#navbarDropdown').html('Type')
+    const isiInput = $('#cariFilm')
     $('#listmovies').html('')
     getMovie();
-    const isiInput = $('#cariFilm')
     $('#home').addClass('d-none')
     $('#movie-list').removeClass('d-none')
     $('#wholeDocument').removeClass('wholeDoc')
-    $('#title-genre').html('Result ' + '\"' + isiInput.val() + '\"')
+    $('#title-genre').html('Result ' + '\"<h2 class="isi-title fw-bold">' + isiInput.val() + '</h2>\"')
     isiInput.val('')
+    $('#listType').removeClass('d-none')
 })
 $('#cariFilm').on('keyup', function (e) {
     if (e.keyCode === 13) {
+        $('#navbarDropdown').html('Type')
         $('#listmovies').html('')
         getMovie();
         const isiInput = $('#cariFilm')
         $('#home').addClass('d-none')
         $('#movie-list').removeClass('d-none')
         $('#wholeDocument').removeClass('wholeDoc')
-        $('#title-genre').html('Result ' + '\"' + isiInput.val() + '\"')
+        $('#title-genre').html('Result ' + '\"<h2 class="isi-title fw-bold">' + isiInput.val() + '</h2>\"')
         isiInput.val('')
+        $('#listType').removeClass('d-none')
     }
 })
 
 $('#btn-2').on('click', function () {
+    $('#navbarDropdown').html('Type')
     $('#listmovies').html('')
     getMovie2();
     const isiInput = $('#cariFilm-2')
     $('#home').addClass('d-none')
     $('#movie-list').removeClass('d-none')
     $('#wholeDocument').removeClass('wholeDoc')
-    $('#title-genre').html('Result ' + '\"' + isiInput.val() + '\"')
+    $('#title-genre').html('Result ' + '\"<h2 class="isi-title fw-bold">' + isiInput.val() + '</h2>\"')
     isiInput.val('')
+    $('#listType').removeClass('d-none')
 
 })
 
@@ -170,6 +176,7 @@ $('.logo-kecil').on('click', function () {
     $('#home').removeClass('d-none')
     $('#movie-list').addClass('d-none')
     $('#wholeDocument').addClass('wholeDoc')
+    $('#listType').addClass('d-none')
 })
 
 $('#listmovies').on('click', '.see-details', function () {
@@ -213,4 +220,69 @@ $('#listmovies').on('click', '.see-details', function () {
     });
 
 
+})
+
+$('.dropdown-item').on('click', function () {
+    const typeMovie = $(this).html()
+    $('#navbarDropdown').html(typeMovie)
+    $.ajax({
+        url: "https://www.omdbapi.com",
+        type: "get",
+        dataType: "json",
+        data: {
+            'apikey': 'e3f6b964',
+            's': $('.isi-title').html(),
+            'type': typeMovie.toLowerCase()
+        },
+        success: function (movie) {
+            if (movie.Response == "True") {
+                $('#listmovies').html('')
+                let movies = movie.Search
+                $.each(movies, function (i, data) {
+                    $('#listmovies').append(`
+                    <div class="col mb-5">
+                    <div class="card shadow-lg border border-dark border-2" style="width: 18rem; border-radius:10px;"><img
+                            src=`+ data.Poster + ` class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">`+ data.Title + `</h5>
+                            <p class="card-text">`+ data.Year + `</p>
+
+                            <!-- Button trigger modal -->
+                            <button data-id=`+ data.imdbID + ` type="button" class="btn btn-primary see-details" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            See Details
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <div class="container">
+                                                <h5 class="modal-title" id="exampleModalLabel">S | H | Film</h5>
+                                                
+                                            </div>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            ...
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    `)
+                })
+
+            } else {
+                $('#wholeDocument').addClass('wholeDoc')
+                $('#listmovies').html(`<h1 style="color: white; text-shadow: 1px 1px 5px black; "class="text-center">` + movie.Error + `</h1>`)
+            }
+
+        }
+    });
 })
