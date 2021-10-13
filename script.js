@@ -157,6 +157,7 @@ $('#cariFilm').on('keyup', function (e) {
     }
 })
 
+
 $('#btn-2').on('click', function () {
     $('#navbarDropdown').html('Type')
     $('#listmovies').html('')
@@ -171,6 +172,20 @@ $('#btn-2').on('click', function () {
 
 })
 
+$('#cariFilm-2').on('keyup', function (e) {
+    if (e.keyCode === 13) {
+        const isiInput = $('#cariFilm-2')
+        $('#navbarDropdown').html('Type')
+        $('#listmovies').html('')
+        getMovie2();
+        $('#home').addClass('d-none')
+        $('#movie-list').removeClass('d-none')
+        $('#wholeDocument').removeClass('wholeDoc')
+        $('#title-genre').html('Result ' + '\"<h2 class="isi-title fw-bold">' + isiInput.val() + '</h2>\"')
+        isiInput.val('')
+        $('#listType').removeClass('d-none')
+    }
+})
 
 $('.logo-kecil').on('click', function () {
     $('#home').removeClass('d-none')
