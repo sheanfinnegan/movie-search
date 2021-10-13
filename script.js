@@ -131,6 +131,10 @@ function getMovie2() {
 
 
 $('#btn').on('click', function () {
+    $('.preloader').css('display', 'unset')
+    setTimeout(function () {
+        $('.preloader').fadeOut(700)
+    }, 950)
     $('#navbarDropdown').html('Type')
     const isiInput = $('#cariFilm')
     $('#listmovies').html('')
@@ -144,6 +148,10 @@ $('#btn').on('click', function () {
 })
 $('#cariFilm').on('keyup', function (e) {
     if (e.keyCode === 13) {
+        $('.preloader').css('display', 'unset')
+        setTimeout(function () {
+            $('.preloader').fadeOut(700)
+        }, 950)
         $('#navbarDropdown').html('Type')
         $('#listmovies').html('')
         getMovie();
@@ -159,6 +167,10 @@ $('#cariFilm').on('keyup', function (e) {
 
 
 $('#btn-2').on('click', function () {
+    $('.preloader').css('display', 'unset')
+    setTimeout(function () {
+        $('.preloader').fadeOut(700)
+    }, 950)
     $('#navbarDropdown').html('Type')
     $('#listmovies').html('')
     getMovie2();
@@ -174,6 +186,10 @@ $('#btn-2').on('click', function () {
 
 $('#cariFilm-2').on('keyup', function (e) {
     if (e.keyCode === 13) {
+        $('.preloader').css('display', 'unset')
+        setTimeout(function () {
+            $('.preloader').fadeOut(700)
+        }, 950)
         const isiInput = $('#cariFilm-2')
         $('#navbarDropdown').html('Type')
         $('#listmovies').html('')
@@ -188,6 +204,10 @@ $('#cariFilm-2').on('keyup', function (e) {
 })
 
 $('.logo-kecil').on('click', function () {
+    $('.preloader').css('display', 'unset')
+    setTimeout(function () {
+        $('.preloader').fadeOut(700)
+    }, 950)
     $('#home').removeClass('d-none')
     $('#movie-list').addClass('d-none')
     $('#wholeDocument').addClass('wholeDoc')
@@ -238,6 +258,10 @@ $('#listmovies').on('click', '.see-details', function () {
 })
 
 $('.dropdown-item').on('click', function () {
+    $('.preloader').css('display', 'unset')
+    setTimeout(function () {
+        $('.preloader').fadeOut(700)
+    }, 950)
     $('#wholeDocument').removeClass('wholeDoc')
     const typeMovie = $(this).html()
     $('#navbarDropdown').html(typeMovie)
