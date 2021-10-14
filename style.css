@@ -8,8 +8,9 @@
 
 body {
     font-family: Poppins;
-    background: url('img/bg.png') no-repeat;
+    background: url('img/bg.png') no-repeat center center;
     background-size: 100% 100%;
+    background-color: rgb(1, 1, 1);
     background-attachment: fixed;
     box-sizing: border-box;
     margin: 0;
