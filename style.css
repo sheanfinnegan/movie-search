@@ -57,6 +57,10 @@ body {
     #p-1 {
         margin-right: 2.5rem;
     }
+
+    #n-1 {
+        margin-right: 2rem;
+    }
 }
 
 @media (max-width:320px) {

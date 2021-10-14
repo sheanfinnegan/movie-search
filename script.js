@@ -141,8 +141,8 @@ function getMovie2() {
 }
 
 $('#btn').on('click', function () {
-    $('#p-1').removeClass('col-5')
-    $('#n-1').removeClass('col-5')
+    $('#p-1').removeClass('col')
+    $('#n-1').removeClass('col')
     $('#p-1').addClass('col-1')
     $('#n-1').addClass('col-1')
     page = 1;
@@ -167,8 +167,8 @@ $('#btn').on('click', function () {
 
 $('#cariFilm').on('keyup', function (e) {
     if (e.keyCode === 13) {
-        $('#p-1').removeClass('col-5')
-        $('#n-1').removeClass('col-5')
+        $('#p-1').removeClass('col')
+        $('#n-1').removeClass('col')
         $('#p-1').addClass('col-1')
         $('#n-1').addClass('col-1')
         $('#btn-n').prop('disabled', false)
@@ -194,8 +194,8 @@ $('#cariFilm').on('keyup', function (e) {
 
 
 $('#btn-2').on('click', function () {
-    $('#p-1').removeClass('col-5')
-    $('#n-1').removeClass('col-5')
+    $('#p-1').removeClass('col')
+    $('#n-1').removeClass('col')
     $('#p-1').addClass('col-1')
     $('#n-1').addClass('col-1')
     page = 1;
@@ -221,8 +221,8 @@ $('#btn-2').on('click', function () {
 
 $('#cariFilm-2').on('keyup', function (e) {
     if (e.keyCode === 13) {
-        $('#p-1').removeClass('col-5')
-        $('#n-1').removeClass('col-5')
+        $('#p-1').removeClass('col')
+        $('#n-1').removeClass('col')
         $('#p-1').addClass('col-1')
         $('#n-1').addClass('col-1')
         $('#btn-n').prop('disabled', false)
@@ -302,8 +302,8 @@ $('#listmovies').on('click', '.see-details', function () {
 })
 
 $('.dropdown-item').on('click', function () {
-    $('#p-1').removeClass('col-5')
-    $('#n-1').removeClass('col-5')
+    $('#p-1').removeClass('col')
+    $('#n-1').removeClass('col')
     $('#p-1').addClass('col-1')
     $('#n-1').addClass('col-1')
     page = 1;
@@ -505,9 +505,9 @@ function allOrType() {
                 $('#listmovies').html(`<h1 id='eror' style="color: white; text-shadow: 1px 1px 5px black; "class="text-center">` + movie.Error + `</h1>`)
                 $('#btn-n').prop('disabled', true)
                 $('#p-1').removeClass('col-1')
-                $('#p-1').addClass('col-5')
+                $('#p-1').addClass('col')
                 $('#n-1').removeClass('col-1')
-                $('#n-1').addClass('col-5')
+                $('#n-1').addClass('col')
 
             }
 
@@ -575,9 +575,9 @@ function adaType() {
                 $('#listmovies').html(`<h1 id='eror' style="color: white; text-shadow: 1px 1px 5px black; "class="text-center">` + movie.Error + `</h1>`)
                 $('#btn-n').prop('disabled', true)
                 $('#p-1').removeClass('col-1')
-                $('#p-1').addClass('col-5')
+                $('#p-1').addClass('col')
                 $('#n-1').removeClass('col-1')
-                $('#n-1').addClass('col-5')
+                $('#n-1').addClass('col')
             }
 
         }
@@ -588,8 +588,8 @@ function adaType() {
 $('#btn-n').on('click', function () {
     page += 1;
     console.log(page)
-    $('#p-1').removeClass('col-5')
-    $('#n-1').removeClass('col-5')
+    $('#p-1').removeClass('col')
+    $('#n-1').removeClass('col')
     $('#p-1').addClass('col-1')
     $('#n-1').addClass('col-1')
     console.log($('#listmovies').children())
@@ -608,8 +608,8 @@ $('#btn-n').on('click', function () {
 })
 
 $('#btn-p').on('click', function () {
-    $('#p-1').removeClass('col-5')
-    $('#n-1').removeClass('col-5')
+    $('#p-1').removeClass('col')
+    $('#n-1').removeClass('col')
     $('#p-1').addClass('col-1')
     $('#n-1').addClass('col-1')
     $('#btn-n').prop('disabled', false)
